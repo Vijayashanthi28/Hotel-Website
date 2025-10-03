@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+       <!-- Navigation -->
+    <nav class="primary-navbar">
+        <div class="navbar-wrapper">
+            <a href="#" class="brand-logo">Dakshin Bhojanam</a>
+            <div class="navigation-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#" class="cta-button">Order now</a>
+            </div>
+        </div>
+    </nav>
+      <section class="menu-banner-section">
+        <h1 class="menu-main-heading">Our Menu</h1>
+        <p class="menu-description">A curated selection of South Indian classics</p>
+    </section>
+
+    <div class="menu-main-container">
+        <nav class="category-filter-bar">
+            <button class="category-btn active-category" data-category="all">All</button>
+            <button class="category-btn" data-category="breakfast">Breakfast</button>
+            <button class="category-btn" data-category="lunch">Lunch Meal</button>
+            <button class="category-btn" data-category="snacks">Snacks</button>
+            <button class="category-btn" data-category="sweets">Sweets</button>
+            <button class="category-btn" data-category="beverages">Beverages</button>
+        </nav>
+
+        <div class="menu-items-list">
+            <!-- Breakfast Items -->
+            <div class="menu-item-card" data-category="breakfast">
+                <img src="images/about 3.jpg" alt="Kancheepuram Idly" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">Kancheepuram Idly</h3>
+                    <p class="item-info">A temple-style idly spiced with pepper &cumin, steamed in Manthara leaves.</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹80</div>
+            </div>
+
+            <div class="menu-item-card" data-category="breakfast">
+                <img src="images/adai.jpg" alt="Adai Aviyal" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">Adai Aviyal</h3>
+                    <p class="item-info">A rustic pairing of protein-rich Adai and soulful Aviyal where tradition meets nourishment on every plate</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹70</div>
+            </div>
+
+            <!-- Snacks -->
+            <div class="menu-item-card" data-category="snacks">
+                <img src="images/g1.jpg" alt="Pazham Pori" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">Pazham Pori</h3>
+                    <p class="item-info">Ripe bananas dipped in spiced batter and fried to perfection a nostalgic bite of Southern warmth with every crunch</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹40</div>
+            </div>
+
+            <!-- Lunch Items -->
+            <div class="menu-item-card" data-category="lunch">
+                <img src="images/about 4.webp" alt="South Indian Thali" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">South Indian Thali</h3>
+                    <p class="item-info">A complete meal with rice, sambar, rasam, vegetables, and traditional accompaniments</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹150</div>
+            </div>
+
+            <!-- Sweets -->
+            <div class="menu-item-card" data-category="sweets">
+                <img src="data:image/jpeg;base64,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" alt="Mysore Pak" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">Mysore Pak</h3>
+                    <p class="item-info">Traditional sweet made with gram flour, ghee, and sugar - melts in your mouth</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹60</div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-item-card" data-category="beverages">
+                <img src="images/filter-coffee-recipe8.webp" alt="Filter Coffee" class="item-photo">
+                <div class="item-details">
+                    <h3 class="item-name">Filter Coffee</h3>
+                    <p class="item-info">Authentic South Indian filter coffee brewed to perfection with frothy milk</p>
+                    <div class="item-actions">
+                        <button class="cart-add-btn">Add To Cart</button>
+                        <button class="add-action-btn" onclick="showAddControls(this)">ADD</button>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="decreaseQty(this)">-</button>
+                            <span class="qty-display">1</span>
+                            <button class="qty-btn" onclick="increaseQty(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-cost">₹30</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartNotification" class="notification-modal">
+        <div class="modal-content-box">
+            <div class="modal-icon-display"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3 class="modal-heading">Added to Cart!</h3>
+            <p class="modal-text">Your item has been added to the cart. Ready to place your order?</p>
+            <div class="modal-action-btns">
+                <button class="order-confirm-btn" onclick="placeOrder()">Order Now</button>
+                <button class="modal-dismiss-btn" onclick="closeCartModal()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderConfirmation" class="notification-modal">
+        <div class="modal-content-box">
+            <div class="modal-icon-display">✅</div>
+            <h3 class="modal-heading">Order Placed Successfully!</h3>
+            <p class="modal-text">Thank you for your order! Your delicious South Indian meal will be prepared with love and delivered soon.</p>
+            <div class="modal-action-btns">
+                <button class="modal-dismiss-btn" onclick="closeOrderModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+     <div class="chefs-special-container">
+        <div class="special-layout">
+            <div class="chef-branding">
+                <div class="chef-hat-icon">
+                    <div class="hat-top"></div>
+                    <div class="hat-base"></div>
+                </div>
+                <h2 class="choice-heading">Chef's Choice</h2>
+            </div>
+
+            <div class="vertical-divider"></div>
+
+            <div class="dishes-showcase">
+                <div class="dish-item-box">
+                    <img src="images/rava-kesari3.webp" alt="Rava Kesari" class="dish-thumbnail">
+                    <div class="dish-info-section">
+                        <span class="dish-title">Rava Kesari</span>
+                        <span class="dish-price">₹50</span>
+                    </div>
+                </div>
+
+                <div class="dish-item-box">
+                    <img src="images/adai.jpg" alt="Adai Aviyal" class="dish-thumbnail">
+                    <div class="dish-info-section">
+                        <span class="dish-title">Adai Aviyal</span>
+                        <span class="dish-price">₹70</span>
+                    </div>
+                </div>
+
+                <div class="dish-item-box">
+                    <img src="images/filter-coffee-recipe8.webp" alt="Filter Coffee" class="dish-thumbnail">
+                    <div class="dish-info-section">
+                        <span class="dish-title">Filter Coffee</span>
+                        <span class="dish-price">₹40</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="brand-name">Dakshin Bhojanam</h2>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="column-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="column-title">Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#registration">Registration</a></li>
+                        <li><a href="#login">Login</a></li>
+                        <li><a href="#terms">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    Copyright ©2025 All rights reserved
+                </div>
+                <div class="social-section">
+                    <span class="social-title">Follow Us</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                           <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Website">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+          //Menu
+         // Category Filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const menuCards = document.querySelectorAll('.menu-item-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active-category'));
+                this.classList.add('active-category');
+                
+                const selectedCategory = this.getAttribute('data-category');
+                filterMenuItems(selectedCategory);
+            });
+        });
+
+        function filterMenuItems(category) {
+            menuCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (category === 'all') {
+                    card.classList.remove('hidden-item');
+                } else {
+                    if (cardCategory === category) {
+                        card.classList.remove('hidden-item');
+                    } else {
+                        card.classList.add('hidden-item');
+                    }
+                }
+            });
+        }
+
+        // Add Button - Show Quantity Controls
+        function showAddControls(button) {
+            const actionDiv = button.parentElement;
+            button.style.display = 'none';
+            actionDiv.querySelector('.quantity-control').classList.add('visible');
+        }
+
+        // Increase Quantity
+        function increaseQty(button) {
+            const qtyDisplay = button.parentElement.querySelector('.qty-display');
+            let currentQty = parseInt(qtyDisplay.textContent);
+            qtyDisplay.textContent = currentQty + 1;
+        }
+
+        // Decrease Quantity
+        function decreaseQty(button) {
+            const qtyDisplay = button.parentElement.querySelector('.qty-display');
+            const addBtn = button.closest('.item-actions').querySelector('.add-action-btn');
+            const qtyControl = button.parentElement;
+            
+            let currentQty = parseInt(qtyDisplay.textContent);
+            
+            if (currentQty > 1) {
+                qtyDisplay.textContent = currentQty - 1;
+            } else {
+                qtyControl.classList.remove('visible');
+                addBtn.style.display = 'inline-block';
+                qtyDisplay.textContent = 1;
+            }
+        }
+
+        // Add to Cart
+        const cartButtons = document.querySelectorAll('.cart-add-btn');
+        cartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                showCartModal();
+            });
+        });
+
+        function showCartModal() {
+            document.getElementById('cartNotification').classList.add('show-modal');
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartNotification').classList.remove('show-modal');
+        }
+
+        // Place Order
+        function placeOrder() {
+            closeCartModal();
+            document.getElementById('orderConfirmation').classList.add('show-modal');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderConfirmation').classList.remove('show-modal');
+        }
+
+        // Close modals on outside click
+        document.querySelectorAll('.notification-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show-modal');
+                }
+            });
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.notification-modal').forEach(modal => {
+                    modal.classList.remove('show-modal');
+                });
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
